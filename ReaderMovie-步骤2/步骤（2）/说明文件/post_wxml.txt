@@ -1,0 +1,41 @@
+数据绑定相关资料：
+https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/data.html
+
+<image class="post-author" src="{{author_img}}"></image>
+<!--
+	{{author_img}}的数据是从post.js的onLoad事件中this.setData传给data获得的
+	绑定在属性里，需要加引号
+-->
+<text class="post-date">{{data}}</text>
+<!--
+	{{data}}的数据是从post.js的data中获得的
+-->
+
+-------------------------------------------------------------------------------------------
+
+<swiper style="width:100%; height:600rpx" vertical="true">
+
+vertical="true" 垂直滚动
+vertical="{{false}}"横向滚动，或删除vertical属性
+凡是涉及到boolean值的时候，都需要写 vertical="{{false}}" ，如果只写 vertical="false" 系统只判断里面有值，那么还是会认为是true
+
+-------------------------------------------------------------------------------------------
+<view wx:if="{{false}}">wx:if="{{false}}"是隐藏这个标签</view>
+<!--wx:if="{{false}}"表示隐藏这个标签，boolean需要这么写-->
+<!--<view wx:if="{{true}}">wx:if="{{true}}"是显示这个标签，wx:if="{{111}}"里面只要有值，就能显示</view>-->
+
+--------------------------------------------------------------------------------------------
+在post.js的data中写入值
+img_condition:false
+
+post.wxml中
+<view wx:if="{{img_condition}}">wx:if="{{img_condition}}"是隐藏这个标签</view>
+<!--wx:if="{{img_condition}}从从post.js中的的data中取到了img_condition的值为false-->
+
+---------------------------------------------------------------------------------------------
+字符串和动态值相结合
+在post.js的data中 title:"一定会变好的"
+<text class="post-title">{{"abc" + title}}</text>
+输出
+abc一定会变好的
+---------------------------------------------------------------------------------------------

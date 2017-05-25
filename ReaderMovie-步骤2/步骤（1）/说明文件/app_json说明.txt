@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/welcome/welcome",
+    "pages/posts/post"
+  ],
+  "window":{
+    "navigationBarBackgroundColor":"#b3d4db"
+  }
+}
+微信小程序，让
+"pages":[
+    "pages/welcome/welcome",
+    "pages/posts/post"
+  ],
+里的第一个目录为默认进入页面
+打开微信小程序默认进入 "pages/welcome/welcome"
+
+做微信小程序页面的时候，做到哪个页面，就可以把要做的那个页面，放到最上面去当默认页面

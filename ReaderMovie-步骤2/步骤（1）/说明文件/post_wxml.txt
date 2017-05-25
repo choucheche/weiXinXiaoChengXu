@@ -1,0 +1,23 @@
+<view>
+    <swiper style="width:100%; height:600rpx" indicator-dots="true" autoplay="true" interval="5000" vertical="true">
+    <!--
+        加入swiper标签，自动加载swiper功能，不需要加载swiper的css,js
+        https://mp.weixin.qq.com/debug/wxadoc/dev/component/swiper.html
+        需要给swiper标签写宽高
+        根据官网微信小程序swiper说明，在swiper标签上加上
+        indicator-dots="true" 显示指示点
+        interval="5000" 间隔5秒
+        vertical="true" 垂直滚动
+    -->
+        <swiper-item>
+            <image src="/images/me.jpg" style="width:750rpx; height:600rpx"></image>
+            <!--image至少写宽度-->
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/me.jpg" style="width:750rpx; height:600rpx"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/me.jpg" style="width:750rpx; height:600rpx"></image>
+        </swiper-item>
+    </swiper>
+</view>

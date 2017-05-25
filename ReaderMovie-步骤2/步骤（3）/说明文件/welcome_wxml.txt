@@ -1,0 +1,6 @@
+<view class="moto-container" bindtap="onTap">
+<!--
+    事件文档：
+    https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/event.html
+    绑定tap事件，事件绑定函数onTap，每个事件必须前面加bind
+-->

@@ -1,0 +1,35 @@
+post.js的onLoad里这么写
+var posts_content=[
+  {
+    date:"Jan 24 2017",
+    title:"一定会变好的",
+    img:{
+      author_img:"/images/me.jpg",
+      post_img:"/images/post/list_img1.jpg"
+    },
+    content:"新年攒机不用愁 手把手教你组装电脑",
+    view_num:"112",
+    collect_num:"96"
+  },{
+    date:"Jan 24 2017",
+    title:"一定会变好的",
+    img:{
+      author_img:"/images/me.jpg",
+      post_img:"/images/post/list_img1.jpg"
+    },
+    content:"新年攒机不用愁 手把手教你组装电脑",
+    view_num:"112",
+    collect_num:"96"
+  }
+];
+
+this.setData({
+  posts_key:posts_content
+});
+/*
+  注意，这里的this.setData({posts_key:posts_content});因为是数组了，所以里面要加大括号
+  将posts_content数组给对象posts_key
+  将posts_key对象的值写到data里了
+*/
+
+就可以让 post.wxml循环获得数据了

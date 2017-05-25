@@ -1,0 +1,23 @@
+<!--页面自动加载同名js,json,wxss文件，在根目录app.json写好pages就可以，无需在这个页面写引用代码-->
+<!--view相当于div-->
+<view class="container">
+    <image class="user-avatar" style="width:200rpx; height:200rpx" src="/images/me.jpg"></image>
+    <!--
+        rpx为了处理苹果和安卓 2:1 的关系
+        设置width:750rpx会让宽度为全屏，不管哪个手机都是全屏
+        静态样式写在外部样式wxss文件里，动态样式写在style内部样式里
+        image组件默认宽度300px、高度225px
+    -->
+    <text class="user-name"><text style="color:red">Hello,</text>snow</text>
+    <text style="color:blue">bl \n ue</text>
+    <!--在文本中加入 \n 会让文字换行-->
+    <!--在text标签里的文字才能长按选中-->
+    <view class="moto-container" bindtap="onTap">
+    <!--
+        事件文档：
+        https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/event.html
+        绑定tap事件，事件绑定函数onTap，每个事件必须前面加bind
+    -->
+        <text class="moto">开启小程序之旅</text>
+    </view>
+</view>

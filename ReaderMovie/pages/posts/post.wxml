@@ -1,0 +1,57 @@
+<view>
+    <swiper style="width:100%; height:600rpx" indicator-dots="true" autoplay="true" interval="5000" vertical="true">
+    <!--
+        加入swiper标签，自动加载swiper功能，不需要加载swiper的css,js
+        https://mp.weixin.qq.com/debug/wxadoc/dev/component/swiper.html
+        需要给swiper标签写宽高
+        根据官网微信小程序swiper说明，在swiper标签上加上
+        indicator-dots="true" 显示指示点
+        interval="5000" 间隔5秒
+        vertical="true" 垂直滚动
+        vertical="{{false}}"横向滚动，或删除vertical属性
+        凡是涉及到boolean值的时候，都需要写 {{false}} ，如果只写 false那么还是会认为是true
+    -->
+        <swiper-item>
+            <image src="/images/post/banner1.jpg" style="width:750rpx; height:600rpx"></image>
+            <!--image至少写宽度-->
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/banner2.jpg" style="width:750rpx; height:600rpx"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/banner3.jpg" style="width:750rpx; height:600rpx"></image>
+        </swiper-item>
+    </swiper>
+    <block wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="idx">
+    <!--
+        <block>标签是无形体的标签，相当于一个括号，在<block>标签里的代码视为一个整体
+        wx:for="{{posts_key}}" 相当于for循环post.js里posts_content数组的值
+        wx:for-item="item"相当于数组里面for循环出来的子元素
+        wx:for-index="idx" 指的是序号，第几个子元素，从0开始
+    -->
+        <view class="post-container">
+            <view class="post-author-date">
+                <image class="post-author" src="{{item.img.author_img}}"></image>
+                <!--
+                    {{img.author_img}}的数据是从post.js的onLoad事件中this.setData传给data获得的
+                    绑定在属性里，需要加引号
+                -->
+                <text class="post-date">{{item.data}} {{idx}}</text>
+                <!--
+                    {{data}}的数据是从post.js的data中获得的
+                    {{idx}} 是上面<block>标签里wx:for-index="idx"得来的，for循环的索引号
+                -->
+            </view>
+            <text class="post-title">{{item.title}}</text>
+            <image class="post-image" src="{{item.img.post_img}}"></image>
+            <text class="post-content">{{item.content}}</text>
+            <view class="post-like">
+                <image class="post-like-image" src="/images/icon/favorite.png"></image>
+                <text class="post-like-font">{{item.collect_num}}</text>
+                <image class="post-like-image" src="/images/icon/comments.png"></image>
+                <text class="post-like-font">{{item.view_num}}</text>
+            </view>
+        </view>
+    </block>
+    
+</view>

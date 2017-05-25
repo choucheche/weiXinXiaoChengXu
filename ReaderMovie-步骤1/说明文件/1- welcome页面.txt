@@ -1,0 +1,36 @@
+根据微信小程序官方 框架说明：
+https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html
+
+在app.json文件加入
+
+{
+  "pages":[
+    "pages/welcome/welcome"
+  ]
+}
+
+可以让页面打开 pages/welcome/welcome.wxml
+
+------------------------------------------------------------------------
+
+在welcome.js中加入
+
+Page({});
+
+// 默认加这个 Page({}); ，不然会报错
+
+------------------------------------------------------------------------
+
+设置微信顶部一行默认颜色：
+https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html
+官方页面中的window对象，设置微信顶部一行默认样式
+
+在app.json中加入
+{
+  "pages":[
+    "pages/welcome/welcome"
+  ],
+  "window":{
+    "navigationBarBackgroundColor":"#b3d4db"
+  }
+}

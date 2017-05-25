@@ -1,0 +1,56 @@
+<view>
+    <swiper style="width:100%; height:600rpx" indicator-dots="true" autoplay="true" interval="5000" vertical="true">
+    <!--
+        加入swiper标签，自动加载swiper功能，不需要加载swiper的css,js
+        https://mp.weixin.qq.com/debug/wxadoc/dev/component/swiper.html
+        需要给swiper标签写宽高
+        根据官网微信小程序swiper说明，在swiper标签上加上
+        indicator-dots="true" 显示指示点
+        interval="5000" 间隔5秒
+        vertical="true" 垂直滚动
+        vertical="{{false}}"横向滚动，或删除vertical属性
+        凡是涉及到boolean值的时候，都需要写 {{false}} ，如果只写 false那么还是会认为是true
+    -->
+        <swiper-item>
+            <image src="/images/post/banner1.jpg" style="width:750rpx; height:600rpx"></image>
+            <!--image至少写宽度-->
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/banner2.jpg" style="width:750rpx; height:600rpx"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/banner3.jpg" style="width:750rpx; height:600rpx"></image>
+        </swiper-item>
+    </swiper>
+    <view class="post-container">
+        <view class="post-author-date">
+            <image class="post-author" src="{{img.author_img}}"></image>
+            <!--
+                {{img.author_img}}的数据是从post.js的onLoad事件中this.setData传给data获得的
+                绑定在属性里，需要加引号
+            -->
+            <text class="post-date">{{data}}</text>
+            <!--{{data}}的数据是从post.js的data中获得的-->
+        </view>
+        <text class="post-title">{{title}}</text>
+        <image class="post-image" src="{{img.post_img}}"></image>
+        <text class="post-content">{{content}}</text>
+        <view class="post-like">
+            <image class="post-like-image" src="/images/icon/favorite.png"></image>
+            <text class="post-like-font">{{collect_num}}</text>
+            <image class="post-like-image" src="/images/icon/comments.png"></image>
+            <text class="post-like-font">{{view_num}}</text>
+        </view>
+        <view wx:if="{{false}}">wx:if="{{false}}"是隐藏这个标签</view>
+        <!--wx:if="{{false}}"表示隐藏这个标签，boolean需要这么写-->
+        <!--<view wx:if="{{true}}">wx:if="{{true}}"是显示这个标签，wx:if="{{111}}"里面只要有值，就能显示</view>-->
+        <view wx:if="{{img_condition}}">wx:if="{{img_condition}}"是隐藏这个标签</view>
+        <!--wx:if="{{img_condition}}从post.js中的data中取到了img_condition的值为false-->
+        <text class="post-title">{{"abc" + title}}</text>
+        <!--输出 abc一定会变好的 字符串加动态数据，从post.js中的data中取到了title-->
+        <text class="post-title">{{a+b+c}}</text>
+        <!--输出 6 因为动态数据是数值型的，从post.js中的data中取到了a,b,c-->
+    </view>
+
+    
+</view>

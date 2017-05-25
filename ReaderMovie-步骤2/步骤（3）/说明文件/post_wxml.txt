@@ -1,0 +1,78 @@
+<block wx:for="{{posts_key}}" wx:for-item="item">
+<!--
+    <block>标签是无形体的标签，相当于一个括号，在<block>标签里的代码视为一个整体
+    wx:for="{{posts_key}}" 相当于for循环post.js里posts_content数组的值
+    wx:for-item="item"相当于数组里面for循环出来的子元素
+-->
+  <view class="post-container">
+    <view class="post-author-date">
+        <image class="post-author" src="{{item.img.author_img}}"></image>
+        <!--
+            {{img.author_img}}的数据是从post.js的onLoad事件中this.setData传给data获得的
+            绑定在属性里，需要加引号
+        -->
+        <text class="post-date">{{item.data}}</text>
+        <!--{{data}}的数据是从post.js的data中获得的-->
+    </view>
+  </view>
+</block>
+
+post.js的onLoad里这么写
+var posts_content=[
+  {
+    date:"Jan 24 2017",
+    title:"一定会变好的",
+    img:{
+      author_img:"/images/me.jpg",
+      post_img:"/images/post/list_img1.jpg"
+    },
+    content:"新年攒机不用愁 手把手教你组装电脑",
+    view_num:"112",
+    collect_num:"96"
+  },{
+    date:"Jan 24 2017",
+    title:"一定会变好的",
+    img:{
+      author_img:"/images/me.jpg",
+      post_img:"/images/post/list_img1.jpg"
+    },
+    content:"新年攒机不用愁 手把手教你组装电脑",
+    view_num:"112",
+    collect_num:"96"
+  }
+];
+
+this.setData({
+  posts_key:posts_content
+});
+/*
+  注意，这里的this.setData({posts_key:posts_content});因为是数组了，所以里面要加大括号
+  将posts_content数组给对象posts_key
+  将posts_key对象的值写到data里了
+*/
+
+就可以循环获取post.js里的数据了
+
+-------------------------------------------------------------------------
+
+<block wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="idx">
+<!--
+    <block>标签是无形体的标签，相当于一个括号，在<block>标签里的代码视为一个整体
+    wx:for="{{posts_key}}" 相当于for循环post.js里posts_content数组的值
+    wx:for-item="item"相当于数组里面for循环出来的子元素
+    wx:for-index="idx" 指的是索引号，第几个子元素，从0开始
+-->
+  <text class="post-date">{{item.data}} {{idx}}</text>
+  <!--
+      {{data}}的数据是从post.js的data中获得的
+      {{idx}} 是上面<block>标签里wx:for-index="idx"得来的，for循环的索引号
+  -->
+</block>
+
+或者
+<block wx:for="{{posts_key}}" wx:for-item="item">
+  <text class="post-date">{{index}}</text>
+  {{index}} 是上面<block>标签里默认，for循环的索引号，第几个子元素，从0开始
+</block>
+
+-------------------------------------------------

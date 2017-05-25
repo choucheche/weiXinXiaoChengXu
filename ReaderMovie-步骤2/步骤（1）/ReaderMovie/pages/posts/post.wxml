@@ -1,0 +1,40 @@
+<view>
+    <swiper style="width:100%; height:600rpx" indicator-dots="true" autoplay="true" interval="5000" vertical="true">
+    <!--
+        加入swiper标签，自动加载swiper功能，不需要加载swiper的css,js
+        https://mp.weixin.qq.com/debug/wxadoc/dev/component/swiper.html
+        需要给swiper标签写宽高
+        根据官网微信小程序swiper说明，在swiper标签上加上
+        indicator-dots="true" 显示指示点
+        interval="5000" 间隔5秒
+        vertical="true" 垂直滚动
+    -->
+        <swiper-item>
+            <image src="/images/post/banner1.jpg" style="width:750rpx; height:600rpx"></image>
+            <!--image至少写宽度-->
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/banner2.jpg" style="width:750rpx; height:600rpx"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/banner3.jpg" style="width:750rpx; height:600rpx"></image>
+        </swiper-item>
+    </swiper>
+    <view class="post-container">
+        <view class="post-author-date">
+            <image class="post-author" src="/images/me.jpg"></image>
+            <text class="post-date">Jan 23 2017</text>
+        </view>
+        <text class="post-title">一定会变好的</text>
+        <image class="post-image" src="/images/post/list_img1.jpg"></image>
+        <text class="post-content">新年攒机不用愁 手把手教你组装电脑</text>
+        <view class="post-like">
+            <image class="post-like-image" src="/images/icon/favorite.png"></image>
+            <text class="post-like-font">92</text>
+            <image class="post-like-image" src="/images/icon/comments.png"></image>
+            <text class="post-like-font">65</text>
+        </view>
+    </view>
+
+    
+</view>
